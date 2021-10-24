@@ -116,8 +116,65 @@ class _HomeState extends State<Home> {
                 height: 40,
               ),
               Container(
-                color: Colors.red,
                 padding: EdgeInsets.all(30),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(30),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black.withOpacity(0.5),
+                        spreadRadius: 5,
+                        blurRadius: 7)
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      child: Center(
+                        child: _loading
+                            ? Container(
+                                width: 300,
+                                child: Column(
+                                  children: [
+                                    Image.asset('assets/flower.png'),
+                                    SizedBox(
+                                      height: 60,
+                                    )
+                                  ],
+                                ),
+                              )
+                            : Container(
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      height: 300,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(10),
+                                        child: Image.file(_image!),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    _output != null
+                                        ? Text(
+                                            'La Flor detectada es: ${_output![0]['label']}',
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20,
+                                            ),
+                                          )
+                                        : Container(),
+                                    SizedBox(
+                                      height: 30,
+                                    )
+                                  ],
+                                ),
+                              ),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ],
           ),
