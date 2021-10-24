@@ -74,124 +74,53 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF010101),
       body: Container(
-        padding: EdgeInsets.symmetric(
-          horizontal: 24,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            stops: [0.004, 1],
+            colors: [
+              Color(0XFFA8E063),
+              Color(0XFF56Ab2F),
+            ],
+          ),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 100,
-            ),
-            Text(
-              'Teachablemachine CNN',
-              style: TextStyle(color: Colors.white, fontSize: 15),
-            ),
-            SizedBox(
-              height: 6,
-            ),
-            Text(
-              'Detectar Perro o Gato',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 25,
-                  fontWeight: FontWeight.w500),
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            Center(
-                child: _loading
-                    ? Container(
-                        width: 300,
-                        child: Column(
-                          children: [
-                            Image(
-                              image: AssetImage('assets/cat.png'),
-                            ),
-                            SizedBox(
-                              height: 50,
-                            )
-                          ],
-                        ),
-                      )
-                    : Container(
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 250,
-                              child: Image.file(_image!),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            _output != null
-                                ? Text(
-                                    '${_output?[0]['label']}',
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 20),
-                                  )
-                                : Container(
-                                    child: Text(
-                                      'no hay nada',
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                  ),
-                            SizedBox(height: 10),
-                          ],
-                        ),
-                      )),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                children: [
-                  GestureDetector(
-                    onTap: picImage,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width - 10,
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 24,
-                        vertical: 17,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      child: Text(
-                        'Toma una Foto',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  GestureDetector(
-                    onTap: picGaleryImage,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width - 20,
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 24,
-                        vertical: 17,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      child: Text(
-                        'Escoge una foto de tu Galería',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    ),
-                  )
-                ],
+        child: Container(
+          padding: EdgeInsets.symmetric(
+            horizontal: 24,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 50,
               ),
-            )
-          ],
+              Text(
+                'Detector de Flores',
+                style: TextStyle(
+                  fontSize: 28,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+              Text(
+                'Custom Tensorflow CNN',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.black87,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Container(
+                color: Colors.red,
+                padding: EdgeInsets.all(30),
+              ),
+            ],
+          ),
         ),
       ),
     );

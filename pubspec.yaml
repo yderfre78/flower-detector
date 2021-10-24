@@ -1,4 +1,4 @@
-name: cat_and_dog_predictor
+name: flower_detector
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to

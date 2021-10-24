@@ -1,4 +1,5 @@
-import 'package:cat_and_dog_predictor/pages/my_splash_page.dart';
+
+import 'package:flower_detector/pages/my_splash_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -8,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Cat vs Dog',
+      title: 'Detector de flores',
       home: MySplashScreen(),
     );
   }

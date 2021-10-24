@@ -15,13 +15,14 @@ class _MySplashScreenState extends State<MySplashScreen> {
       navigateRoute: Home(),
       duration: 4000,
       imageSize: 150,
-      imageSrc: "assets/cat.png",
-      text: "Perro o Gato",
+      imageSrc: "assets/flower.png",
+      text: "DETECTOR DE FLORES",
       textType: TextType.TyperAnimatedText,
       textStyle: TextStyle(
+        color: Colors.green.shade900,
         fontSize: 30.0,
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFF87C042),
     );
   }
 }
